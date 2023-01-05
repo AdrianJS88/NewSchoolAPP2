@@ -6,6 +6,11 @@ public class Person  {
             return  true;
         }
         return false;
+    } public  boolean equals(Teacher c2){
+        if (this.name.trim().equalsIgnoreCase(c2.getName().trim())){
+            return  true;
+        }
+        return false;
     }
 
     public String getName() {

@@ -13,8 +13,14 @@ public class Main {
         String name ;
         String id = null;
         Student c;
-       int studyYear = 0;
-       boolean tax = false;
+        int studyYear = 0;
+        boolean tax = false;
+
+        String name2 ;
+        String id2 = null;
+        Student c2;
+        int studyYear2 = 0;
+        boolean tax2 = false;
         while (!Exit) {
 
             System.out.println("1. ADD STUDENT CONTACT");
