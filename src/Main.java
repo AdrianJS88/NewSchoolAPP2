@@ -36,7 +36,8 @@ public class Main {
             System.out.println("5. DELETE CONTACT");
             System.out.println("6. MEMORY AVAIBLE CONTACTS");
             System.out.println("7. CHECK APP DATA LIMIT  ");
-            System.out.println("8. Exit");
+            System.out.println("8. BOOKS TO READ  ");
+            System.out.println("9. Exit");
             try {
                 System.out.println(" PLEASE CHOOSE A OPTION");
                 Options = sc.nextInt();
@@ -139,11 +140,13 @@ public class Main {
                         }else {
                             System.out.println("YOU CAN ADD MORE CONTACTS");
                         }
+                        break;
+                    case 8:
 
 
 
                         break;
-                    case 8:
+                    case 9:
                         Exit = true;
                         break;
                     default:
