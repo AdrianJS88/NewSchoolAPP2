@@ -100,18 +100,7 @@ public class Main {
                         break;
 
                     case 4:
-//                        System.out.println("CONTACT TEACHER NAME :");
-//                        name2 = sc.next();
-//
-//                        c2 = new Teacher(name2,id2,discipline);
-//
-//                        if (Teacher.existContacts2(c2)) {
-//                            System.out.println("CONTACT TEACHER EXIST ");
-//                        }else {
-//                            System.out.println("CONTACT TEACHER DOSEN'T EXIST");
-//                        }
 
-                     //*************************************************************
 
                         System.out.println("LIST OF OBLIGATORY AND OPTIONAL COURSES :");
                         ObligatoryCourses cursObl = new ObligatoryCourses();
