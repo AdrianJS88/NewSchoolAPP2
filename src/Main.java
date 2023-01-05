@@ -12,17 +12,18 @@ public class Main {
 
         String name ;
         String id = null;
-        Student c;
+        Student c = null;
         int studyYear = 0;
         boolean tax = false;
 
         String name2 ;
         String id2 = null;
-        Student c2;
-        int studyYear2 = 0;
-        boolean tax2 = false;
-        while (!Exit) {
+        Teacher c2;
+        String discipline = null;
 
+
+        while (!Exit) {
+            System.out.println("0. ADD TEACHER CONTACT");
             System.out.println("1. ADD STUDENT CONTACT");
             System.out.println("2. SEE ALL CONTACTS");
             System.out.println("3. SEARCH CONTACTS");
@@ -36,6 +37,22 @@ public class Main {
                 Options = sc.nextInt();
 
                 switch (Options) {
+                    case 0:
+                        System.out.println(" ADD TEACHER NAME");
+                        name2 = sc.next();
+
+                        System.out.println("ADD TEACHER  ID NUMBER");
+                        id2 = sc.next();
+
+                        System.out.println("ADD TEACHER DISCIPLINE ");
+                        discipline = sc.next();
+
+
+
+                        c2 = new Teacher(name2,id2,discipline);
+                        Teacher.addcontacts2(c2);
+                        break;
+
                     case 1:
                         System.out.println(" ADD STUDENT NAME");
                         name = sc.next();
@@ -49,23 +66,49 @@ public class Main {
                         System.out.println("ADD  TRUE IF PAY TAX  ");
                         tax = sc.nextBoolean();
 
+                        System.out.println("cursuri obligatori");
+
+                        
                         c = new Student(name,id,studyYear,tax);
                         Student.addContacts(c);
+
                         break;
 
                     case 2:
+                        Teacher.showAllContacts2();
                         Student.showAllContacts();
+
+
                         break;
 
                     case 3:
                         System.out.println("CONTACT NAME :");
+                        name2 = sc.next();
+
+                        Student.searchByName(name2);
+
+                        System.out.println("CONTACT NAME :");
                         name = sc.next();
 
                         Student.searchByName(name);
+
                         break;
 
                     case 4:
-                        System.out.println("CONTACT NAME :");
+                        System.out.println("CONTACT TEACHER NAME :");
+                        name2 = sc.next();
+
+                        c2 = new Teacher(name2,id2,discipline);
+
+                        if (Teacher.existContacts2(c2)) {
+                            System.out.println("CONTACT TEACHER EXIST ");
+                        }else {
+                            System.out.println("CONTACT TEACHER DOSEN'T EXIST");
+                        }
+
+                     //*************************************************************
+
+                        System.out.println("CONTACT STUDENT NAME :");
                         name = sc.next();
 
                         c = new Student(name,id,studyYear,tax);
@@ -79,6 +122,14 @@ public class Main {
                         break;
 
                     case 5:
+                        System.out.println("CONTACT TEACHER NAME :");
+                        name2 = sc.next();
+                        c2 = new Teacher(name2,id2,discipline);
+                        Teacher.deleteContact2(c2);
+
+                        //*******************************************************
+
+
                         System.out.println("CONTACT NAME :");
                         name = sc.next();
                         c = new Student(name,id,studyYear,tax);

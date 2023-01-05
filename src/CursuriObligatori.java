@@ -6,6 +6,16 @@ public class CursuriObligatori extends Student{
     private String sugestiLectura ;
     private String temeLunare ;
 
+    public CursuriObligatori(String numeCurs, String sumarCurs, String obiectiveCurs, String cartiDecitit, String sugestiLectura, String temeLunare) {
+        super(numeCurs,sumarCurs,obiectiveCurs,cartiDecitit, sugestiLectura,temeLunare);
+        this.numeCurs = numeCurs;
+        SumarCurs = sumarCurs;
+        this.obiectiveCurs = obiectiveCurs;
+        this.cartiDecitit = cartiDecitit;
+        this.sugestiLectura = sugestiLectura;
+        this.temeLunare = temeLunare;
+    }
+
     @Override
     public String toString() {
         return "CursuriObligatori{" +

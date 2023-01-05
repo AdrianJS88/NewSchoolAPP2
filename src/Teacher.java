@@ -27,26 +27,6 @@ public class Teacher extends Person {
 
 
 
-    public int getStudyYear2() {
-        return getStudyYear2();
-    }
-
-
-
-    public boolean isTax2() {
-        return isTax2();
-    }
-
-    public void setTax2(boolean Tax2) {
-        Tax2 = isTax2();
-    }
-
-    public Teacher(String name, String id) {
-        super(name, id);
-
-
-    }
-
     public static void addcontacts2(Teacher c2) {
 
         if (existContacts2(c2)) {
@@ -100,7 +80,7 @@ public class Teacher extends Person {
         boolean find = false;
         for (int i = 0; i < Teacher.length && !find; i++) {
             if (Teacher[i] != null && Teacher[i].getName().trim().equalsIgnoreCase(name2.trim())) {
-                System.out.println("Contact is created: " + Teacher[i].getName() + ", Student id: " + Teacher[i].getId() + ", Study year: " );
+                System.out.println("Contact is created: " + Teacher[i].getName() + ", Student id: " + Teacher[i].getId() + "Disciplina :"+ Teacher[i].getDiscipline());
                 find = true;
             }
 

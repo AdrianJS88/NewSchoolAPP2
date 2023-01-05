@@ -4,14 +4,18 @@ public class Student extends Person  {
     private static final int MAXANIMALS=150;
     private static Student[] students = new Student[MAXANIMALS];
 
+    public Student(String numeCurs, String sumarCurs, String obiectiveCurs, String cartiDecitit, String sugestiLectura, String temeLunare) {
+        super(numeCurs, sumarCurs, obiectiveCurs, cartiDecitit, sugestiLectura, temeLunare);
+    }
+
 
     @Override
     public String toString() {
-        return " Student Profile => " +
-                " ,Name: " +name +'\''+
-                ", Id number:" + id +
-                ", Study Year :" + studyYear + '\'' +
-                ",  Tax free :" + Tax + '\'' +
+        return "Student{" +
+                "studyYear=" + studyYear +
+                ", Tax=" + Tax +
+                ", name='" + name + '\'' +
+                ", id='" + id + '\'' +
                 '}';
     }
 
