@@ -1,12 +1,19 @@
 public class Student extends Person  {
     int studyYear ;
     boolean Tax  ;
-
-    String [] Studentii = new  String[250];
-    String [] Profesorii = new String[200];
-
+    private static final int MAXANIMALS=150;
+    private static Student[] students = new Student[MAXANIMALS];
 
 
+    @Override
+    public String toString() {
+        return " Student Profile => " +
+                " ,Name: " +name +'\''+
+                ", Id number:" + id +
+                ", Study Year :" + studyYear + '\'' +
+                ",  Tax free :" + Tax + '\'' +
+                '}';
+    }
 
     public int getStudyYear() {
         return studyYear;
@@ -29,23 +36,7 @@ public class Student extends Person  {
         this.studyYear = studyYear;
         Tax = tax;
     }
-    public boolean existContacts(String c) {
-        boolean find = false;
-        for (int i = 0; i < Studentii.length && !find; i++) {
-            if (Studentii[i] != null && c.equals(Studentii[i])) {
-                return true;
-            }
-        }
-        return false;
-    }
-    public boolean agendaFull() {
-        for (int i = 0; i < Studentii.length; i++) {
-            if (Studentii[i] == null) {
-                return false;
-            }
-        }
-        return true;
-    }public void addContacts(String c) {
+    public static void addContacts(Student c) {
 
         if (existContacts(c)) {
             System.out.println("CONTACT EXISTS , TRY ANOTHER ONE");
@@ -54,9 +45,9 @@ public class Student extends Person  {
         } else {
 
             boolean find = false;
-            for (int i = 0; i < Studentii.length && !find; i++) {
-                if (Studentii[i] == null) {
-                    Studentii[i] = c;
+            for (int i = 0; i < students.length && !find; i++) {
+                if (students[i] == null) {
+                    students[i] = c;
                     find = true;
                 }
             }
@@ -69,20 +60,60 @@ public class Student extends Person  {
 
         }
     }
-    public int freeContactSpace() {
-        int freeSpaceCounter = 0;
-        for (int i = 0; i < Studentii.length; i++) {
-            if (Studentii[i] == null) {
-                freeSpaceCounter++;
+
+    public static boolean existContacts(Student c) {
+        boolean find = false;
+        for (int i = 0; i < students.length && !find; i++) {
+            if (students[i] != null && c.equals(students[i])) {
+                return true;
             }
         }
-        return freeSpaceCounter;
+        return false;
     }
-    public void deleteContact(Student c) {
+
+    public static void showAllContacts() {
+
+        if (freeContactSpace() == students.length) {
+            System.out.println("NO CONTACTS TO SHOW");
+        } else {
+            for (int i = 0; i < students.length; i++) {
+                if (students[i] != null) {
+                    System.out.println(students[i]);
+                }
+            }
+        }
+    }
+
+
+
+    public static void searchByName(String name) {
         boolean find = false;
-        for (int i = 0; i < Studentii.length && !find; i++) {
-            if (Studentii[i] != null && Studentii[i].equals(c)) {
-                Studentii[i] = null;
+        for (int i = 0; i < students.length && !find; i++) {
+            if (students[i] != null && students[i].getName().trim().equalsIgnoreCase(name.trim())) {
+                System.out.println("Contact is created: " + students[i].getName()  +  ", Student id: " + students[i].getId() + ", Study year: "+  students[i].studyYear + ", Paytax: " + students[i].isTax());
+                find = true;
+            }
+
+        }
+        if (!find) {
+            System.out.println("CONTACT NOT FOUND");
+        }
+    }
+
+    public static boolean agendaFull() {
+        for (int i = 0; i < students.length; i++) {
+            if (students[i] == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void deleteContact(Student c) {
+        boolean find = false;
+        for (int i = 0; i < students.length && !find; i++) {
+            if (students[i] != null && students[i].equals(c)) {
+                students[i] = null;
                 find = true;
             }
         }
@@ -91,6 +122,17 @@ public class Student extends Person  {
         }else {
             System.out.println("ERROR , CONTACT IT'S NOT DELETED");
         }
+
+    }
+
+    public static int freeContactSpace() {
+        int freeSpaceCounter = 0;
+        for (int i = 0; i < students.length; i++) {
+            if (students[i] == null) {
+                freeSpaceCounter++;
+            }
+        }
+        return freeSpaceCounter;
 
     }
 }

@@ -6,9 +6,21 @@ public class CursuriObligatori extends Student{
     private String sugestiLectura ;
     private String temeLunare ;
 
-
-
-
+    @Override
+    public String toString() {
+        return "CursuriObligatori{" +
+                "numeCurs='" + numeCurs + '\'' +
+                ", SumarCurs='" + SumarCurs + '\'' +
+                ", obiectiveCurs='" + obiectiveCurs + '\'' +
+                ", cartiDecitit='" + cartiDecitit + '\'' +
+                ", sugestiLectura='" + sugestiLectura + '\'' +
+                ", temeLunare='" + temeLunare + '\'' +
+                ", studyYear=" + studyYear +
+                ", Tax=" + Tax +
+                ", name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
 
     public String getNumeCurs() {
         return numeCurs;

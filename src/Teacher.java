@@ -5,6 +5,15 @@ public class Teacher extends Person{
         return discipline;
     }
 
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "discipline='" + discipline + '\'' +
+                ", name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
+
     public void setDiscipline(String discipline) {
         this.discipline = discipline;
     }

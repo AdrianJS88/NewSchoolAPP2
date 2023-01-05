@@ -3,14 +3,17 @@ public class CursuriOptionale extends CursuriObligatori{
       private String anStudiu;
       private String cursTinutDeNumeProfesor ;
 
-
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "CursuriOptionale{" +
+                "anStudiu='" + anStudiu + '\'' +
+                ", cursTinutDeNumeProfesor='" + cursTinutDeNumeProfesor + '\'' +
+                ", studyYear=" + studyYear +
+                ", Tax=" + Tax +
+                ", name='" + name + '\'' +
+                ", id='" + id + '\'' +
+                '}';
+    }
 
     public String getAnStudiu() {
         return anStudiu;

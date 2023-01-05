@@ -1,7 +1,12 @@
 public class Person  {
     String name ;
     String id ;
-
+    public  boolean equals(Student c){
+        if (this.name.trim().equalsIgnoreCase(c.getName().trim())){
+            return  true;
+        }
+        return false;
+    }
 
     public String getName() {
         return name;
