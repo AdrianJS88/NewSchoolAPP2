@@ -1,8 +1,8 @@
 public class Student extends Person  {
     int studyYear ;
     boolean Tax  ;
-    private static final int MAXANIMALS=150;
-    private static Student[] students = new Student[MAXANIMALS];
+    private static final int appMemoryAvaible =150;
+    private static Student[] students = new Student[appMemoryAvaible];
 
     public Student(String numeCurs, String sumarCurs, String obiectiveCurs, String cartiDecitit, String sugestiLectura, String temeLunare) {
         super(numeCurs, sumarCurs, obiectiveCurs, cartiDecitit, sugestiLectura, temeLunare);

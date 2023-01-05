@@ -15,12 +15,7 @@ public class Main {
         Student c ;
         int studyYear = 0;
         boolean tax = false;
-        String numeCurs = "algebra " ;
-        String SumarCurs = " nivel" ;
-         String obiectiveCurs ;
-         String cartiDecitit ;
-        String sugestiLectura ;
-         String temeLunare ;
+
 
 
 
@@ -40,7 +35,7 @@ public class Main {
             System.out.println("4. LIST OF OBLIGATORY AND OPTIONAL COURSES");
             System.out.println("5. DELETE CONTACT");
             System.out.println("6. MEMORY AVAIBLE CONTACTS");
-            System.out.println("7. CHECK AGENDA  ");
+            System.out.println("7. CHECK APP DATA LIMIT  ");
             System.out.println("8. Exit");
             try {
                 System.out.println(" PLEASE CHOOSE A OPTION");
@@ -76,7 +71,7 @@ public class Main {
                         System.out.println("ADD  TRUE IF PAY TAX  ");
                         tax = sc.nextBoolean();
 
-                        System.out.println("cursuri obligatori");
+                        System.out.println("LIST OF OBLIGATORY COURSES");
 
                         
                         c = new Student(name,id,studyYear,tax);
@@ -118,7 +113,7 @@ public class Main {
 
                      //*************************************************************
 
-                        System.out.println("CURSURI OBLIGATORI STUDENTI :");
+                        System.out.println("LIST OF OBLIGATORY AND OPTIONAL COURSES :");
                         ObligatoryCourses cursObl = new ObligatoryCourses();
                         System.out.println(cursObl.getNameCourse());
                         System.out.println(cursObl.getBooksRead());
