@@ -12,9 +12,19 @@ public class Main {
 
         String name ;
         String id = null;
-        Student c = null;
+        Student c ;
         int studyYear = 0;
         boolean tax = false;
+        String numeCurs = "algebra " ;
+        String SumarCurs = " nivel" ;
+         String obiectiveCurs ;
+         String cartiDecitit ;
+        String sugestiLectura ;
+         String temeLunare ;
+
+
+
+
 
         String name2 ;
         String id2 = null;
@@ -27,7 +37,7 @@ public class Main {
             System.out.println("1. ADD STUDENT CONTACT");
             System.out.println("2. SEE ALL CONTACTS");
             System.out.println("3. SEARCH CONTACTS");
-            System.out.println("4. LIST SAVED CONTACTS");
+            System.out.println("4. LIST OF OBLIGATORY AND OPTIONAL COURSES");
             System.out.println("5. DELETE CONTACT");
             System.out.println("6. MEMORY AVAIBLE CONTACTS");
             System.out.println("7. CHECK AGENDA  ");
@@ -95,30 +105,27 @@ public class Main {
                         break;
 
                     case 4:
-                        System.out.println("CONTACT TEACHER NAME :");
-                        name2 = sc.next();
-
-                        c2 = new Teacher(name2,id2,discipline);
-
-                        if (Teacher.existContacts2(c2)) {
-                            System.out.println("CONTACT TEACHER EXIST ");
-                        }else {
-                            System.out.println("CONTACT TEACHER DOSEN'T EXIST");
-                        }
+//                        System.out.println("CONTACT TEACHER NAME :");
+//                        name2 = sc.next();
+//
+//                        c2 = new Teacher(name2,id2,discipline);
+//
+//                        if (Teacher.existContacts2(c2)) {
+//                            System.out.println("CONTACT TEACHER EXIST ");
+//                        }else {
+//                            System.out.println("CONTACT TEACHER DOSEN'T EXIST");
+//                        }
 
                      //*************************************************************
 
-                        System.out.println("CONTACT STUDENT NAME :");
-                        name = sc.next();
+                        System.out.println("CURSURI OBLIGATORI STUDENTI :");
+                        ObligatoryCourses cursObl = new ObligatoryCourses();
+                        System.out.println(cursObl.getNameCourse());
+                        System.out.println(cursObl.getBooksRead());
+                        System.out.println(cursObl.getSummaryOfCourse());
 
-                        c = new Student(name,id,studyYear,tax);
-
-                        if (Student.existContacts(c)) {
-                            System.out.println("CONTACT EXIST ");
-                        }else {
-                            System.out.println("CONTACT DOSEN'T EXIST");
-                        }
-
+                        OptionalCourses cursOpt = new OptionalCourses("2023","Marian ");
+                        System.out.println(cursOpt);
                         break;
 
                     case 5:
