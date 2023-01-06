@@ -28,6 +28,7 @@ public class Main {
 
 
         while (!Exit) {
+            System.out.println(" ");
             System.out.println("0. ADD TEACHER CONTACT");
             System.out.println("1. ADD STUDENT CONTACT");
             System.out.println("2. SEE ALL CONTACTS");
@@ -39,7 +40,7 @@ public class Main {
             System.out.println("8. BOOKS TO READ  ");
             System.out.println("9. Exit");
             try {
-                System.out.println(" PLEASE CHOOSE A OPTION");
+                System.out.println(" PLEASE CHOOSE A OPTION:");
                 Options = sc.nextInt();
 
                 switch (Options) {
@@ -104,13 +105,16 @@ public class Main {
 
 
                         System.out.println("LIST OF OBLIGATORY AND OPTIONAL COURSES :");
-                        ObligatoryCourses cursObl = new ObligatoryCourses();
-                        System.out.println(cursObl.getNameCourse());
-                        System.out.println(cursObl.getBooksRead());
-                        System.out.println(cursObl.getSummaryOfCourse());
+                        System.out.println(" ");
+                        ObligatoryCourses cursObl = new ObligatoryCourses(" INFORMATICA "," 6 MONTHS "," LEARNING ",
+                                " JAVA CORE "," THINK LIKE A PROGRAMMER "," LEARN OOP ");
+                        System.out.println(cursObl);
+                        System.out.println(" ");
 
-                        OptionalCourses cursOpt = new OptionalCourses("2023","Marian ");
+
+                        OptionalCourses cursOpt = new OptionalCourses("ISTORIE" , "2023" , "POP DANIEL");
                         System.out.println(cursOpt);
+
                         break;
 
                     case 5:
@@ -142,7 +146,9 @@ public class Main {
                         }
                         break;
                     case 8:
-
+                        System.out.println("LIST OF BOOKS:");
+                        Books read = new Books();
+                        System.out.println( read.getBooksList());
 
 
                         break;

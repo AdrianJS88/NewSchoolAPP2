@@ -1,22 +1,19 @@
-public class Student extends Person  {
-    int studyYear ;
-    boolean Tax  ;
-    private static final int appMemoryAvaible =150;
+public class Student extends Person {
+    int studyYear;
+    boolean Tax;
+    private static final int appMemoryAvaible = 500;
     private static Student[] students = new Student[appMemoryAvaible];
 
-    public Student(String numeCurs, String sumarCurs, String obiectiveCurs, String cartiDecitit, String sugestiLectura, String temeLunare) {
-        super(numeCurs, sumarCurs, obiectiveCurs, cartiDecitit, sugestiLectura, temeLunare);
-    }
+
 
 
     @Override
     public String toString() {
-        return "Student{" +
-                "studyYear=" + studyYear +
-                ", Tax=" + Tax +
-                ", name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                '}';
+        return "Student:" +
+                "Study Year:" + studyYear + "\n" +
+                "Tax:" + Tax + "\n" +
+                "Name:" + name +   "\n" +
+                "Id:" + id + "\n" +"*************************" ;
     }
 
     public int getStudyYear() {
@@ -78,7 +75,7 @@ public class Student extends Person  {
     public static void showAllContacts() {
 
         if (freeContactSpace() == students.length) {
-            System.out.println("NO CONTACTS TO SHOW");
+            System.out.println("NO STUDENT CONTACT TO SHOW!!!");
         } else {
             for (int i = 0; i < students.length; i++) {
                 if (students[i] != null) {

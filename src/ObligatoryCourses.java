@@ -4,28 +4,31 @@ public class ObligatoryCourses {
     private String obiectiveCurse;
     private String booksRead;
     private String sugestionForLecture;
-    private String mounthHomework;
+    private String monthHomework;
 
 
-
-    public ObligatoryCourses() {
-
+    public ObligatoryCourses(String nameCourse, String summaryOfCourse, String obiectiveCurse, String booksRead, String sugestionForLecture, String monthHomework) {
+        this.nameCourse = nameCourse;
+        this.summaryOfCourse = summaryOfCourse;
+        this.obiectiveCurse = obiectiveCurse;
+        this.booksRead = booksRead;
+        this.sugestionForLecture = sugestionForLecture;
+        this.monthHomework = monthHomework;
     }
 
     @Override
     public String toString() {
-        return "OBLIGATORY COURSES{" +
-                " NAME OF COURSE'" + nameCourse + '\'' +
-                ", SUMMARY OF COURSE'" + summaryOfCourse + '\'' +
-                ", OBECTIVE COURSE :" + obiectiveCurse + '\'' +
-                ",BOOKS TO READ'" + booksRead + '\'' +
-                ", SUGESTION FOR LECTURE'" + sugestionForLecture + '\'' +
-                ", MOUNTH HOMEWORK'" + mounthHomework + '\'' +
-                '}';
+        return " OBLIGATORY COURSES:"+"*" + "\n"+"*********************" + "\n"+
+                " NAME OF COURSE:"+nameCourse +
+                " * SUMMARY OF COURSE:"+summaryOfCourse + "\n" +
+                "  * OBECTIVE COURSE:"+obiectiveCurse  +
+                " * BOOKS TO READ:"+booksRead  +
+                " * SUGESTION FOR LECTURE:"+sugestionForLecture +
+                " * MONTH HOMEWORK: "+ monthHomework;
     }
     public String getNameCourse() {
         {
-            String nameCourse = "Matematica";
+
             System.out.println(nameCourse);
         }
         return nameCourse;
@@ -33,22 +36,22 @@ public class ObligatoryCourses {
 
 
     public String getSummaryOfCourse() {
-        System.out.println("Matematics ");
+
         return summaryOfCourse;
     }
 
 
 
     public String getBooksRead() {
-        System.out.println("Algembra , Geometrical ,Functions ");
+
         return booksRead;
     }
 
 
 
-    public String getMounthHomework() {
-        System.out.println("Basic level practice");
-        return mounthHomework;
+    public String getMonthHomework() {
+
+        return monthHomework;
     }
 
 

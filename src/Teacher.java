@@ -22,8 +22,8 @@ public class Teacher extends Person {
         this.discipline = discipline;
     }
 
-    private static final int MAXANIMALS2 = 150;
-    private static Teacher[] Teacher = new Teacher[MAXANIMALS2];
+    private static final int appMemoryAvaible2 =500;
+    private static Teacher[] Teacher = new Teacher[appMemoryAvaible2];
 
 
 
@@ -65,7 +65,7 @@ public class Teacher extends Person {
     public static void showAllContacts2() {
 
         if (freeContactSpace2() == Teacher.length) {
-            System.out.println("NO CONTACTS TO SHOW");
+            System.out.println("NO TEACHER CONTACT TO SHOW!!!");
         } else {
             for (int i = 0; i < Teacher.length; i++) {
                 if (Teacher[i] != null) {
@@ -128,11 +128,10 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher{" +
-                "discipline='" + discipline + '\'' +
-                ", name='" + name + '\'' +
-                ", id='" + id + '\'' +
-                '}';
+        return "Teacher:" + "\n" +
+                "Discipline:" + discipline +"\n" +
+                "Name:" + name  + "\n" +
+                "Id:" + id + "\n" +"*************************" ;
     }
 
 }
